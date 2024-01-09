@@ -1,0 +1,128 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Safario Travel - Home</title>
+	<link rel="icon" href="{%static 'img/Fevicon.png'%}" type="image/png">
+
+  <link rel="stylesheet" href="{%static 'vendors/bootstrap/bootstrap.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/fontawesome/css/all.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/themify-icons/themify-icons.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/linericon/style.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/owl-carousel/owl.theme.default.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/owl-carousel/owl.carousel.min.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/flat-icon/font/flaticon.css'%}">
+  <link rel="stylesheet" href="{%static 'vendors/nice-select/nice-select.css'%}">
+
+  <link rel="stylesheet" href="{%static 'css/style.css'%}">
+</head>
+<body class="bg-shape">
+
+
+  <header class="header_area">
+    <div class="main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container box_1620">
+            <a class="navbar-brand logo_h" href="#"><h2>Flight Delays</h2></a>
+
+
+          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <ul class="nav navbar-nav menu_nav justify-content-end">
+              <li class="nav-item"><a class="nav-link" href="{%url 'index'%}">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'UserLogin'%}">Users</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'AdminLogin'%}">Admin</a></li>
+              <li class="nav-item"><a class="nav-link" href="{%url 'UserRegister'%}">Register</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+   {%block contents%}
+
+  {%endblock%}
+
+  <section class="section-margin generic-margin">
+    <div class="container">
+      <div class="section-intro text-center pb-90px">
+        <img class="section-intro-img" src="{%static 'img/home/section-icon.png'%}" alt="">
+        <h2>Dataset</h2>
+        <p>
+            To predict flight delays to train models, we have collected  data accumulated by the Bureau of Transportation, U.S. Statistics of all the domestic flights taken in 2015 was used. The US Bureau of Transport Statistics provides statistics of arrival and departure that includes actual departure time, scheduled departure time, scheduled elapsed time, wheels-off time, departure delay and taxi-out time per airport. Cancellation and Rerouting by the airport and the airline with the date and time and flight labelling along with airline airborne time are also provided. The data set consists of 25 columns and 59986 rows. Fig. 1 shows some of the fields of the original dataset. There were many lines with missing and null values. The data must be pre-processed for later use.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="service-card text-center">
+            <div class="service-card-img">
+              <img class="img-fluid" src="{%static 'img/home/service1.png'%}" alt="">
+            </div>
+            <div class="service-card-body">
+              <h3>Mean squared error</h3>
+              <p>The MSE is appropriate for our regression problems since it is differentiable, contributing to the stability of the algorithms. It also heavily punishes the bigger errors over smaller errors.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="service-card text-center">
+            <div class="service-card-img">
+              <img class="img-fluid" src="{%static 'img/home/service2.png'%}" alt="">
+            </div>
+            <div class="service-card-body">
+              <h3>Departure Delay</h3>
+              <p>lists our results for departure delay which compares different Machine Learning models, i.e. Logistic Regression, Decision Tree Regressor, Bayesian Ridge, Random Forest Regressor and Gradient Boosting Regressor, based on various evaluation metrics. Further, we compare each model concerning one evaluation metric at a time and show it as a bar graph.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="service-card text-center">
+            <div class="service-card-img">
+              <img class="img-fluid" src="{%static 'img/home/service3.png'%}" alt="">
+            </div>
+            <div class="service-card-body">
+              <h3>Arrival Delay</h3>
+              <p>our results for arrival delay which compares different Machine Learning models, i.e. Logistic Regression, Decision Tree Regressor, Bayesian Ridge, Random Forest egressor and Gradient Boosting Regressor, based on various evaluation metrics. Further, we compare each model concerning one evaluation metric at a time and show it as a bar graph.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row">
+
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <p class="col-lg-8 col-sm-12 footer-text m-0 text-center text-lg-left">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://google.com" target="_blank">Alex Corporation</a>
+</p>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+  <script src="{%static 'vendors/jquery/jquery-3.2.1.min.js'%}"></script>
+  <script src="{%static 'vendors/bootstrap/bootstrap.bundle.min.js'%}"></script>
+  <script src="{%static 'vendors/owl-carousel/owl.carousel.min.js'%}"></script>
+  <script src="{%static 'vendors/nice-select/jquery.nice-select.min.js'%}"></script>
+  <script src="{%static 'js/jquery.ajaxchimp.min.js'%}"></script>
+  <script src="{%static 'js/mail-script.js'%}"></script>
+  <script src="{%static 'js/skrollr.min.js'%}"></script>
+  <script src="{%static 'js/main.js'%}"></script>
+</body>
+</html>

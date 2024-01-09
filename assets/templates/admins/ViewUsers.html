@@ -1,0 +1,61 @@
+{%extends 'admins/adminbase.html'%}
+{%load static %}
+
+{%block contents%}
+<section class="hero-banner magic-ball">
+    <div class="container">
+
+        <div class="row align-items-center text-center text-md-left">
+            <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+
+                 <h2>Admin View Users Page</h2>
+ <table class="table table-bordered bg-light text-dark">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Name</th>
+        <th>Login ID</th>
+        <th>Mobile</th>
+        <th>Email</th>
+        <th>Locality</th>
+        <th>Status</th>
+        <th>Activate</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+                                            <tr style="color: Black">
+                                                <td>{{forloop.counter}}</td>
+                                                <td>{{i.name}}</td>
+                                                <td>{{i.loginid}}</td>
+                                                <td>{{i.mobile}}</td>
+                                                <td>{{i.email}}</td>
+                                                <td>{{i.locality}}</td>
+                                                <td>{{i.status}}</td>
+
+                                                {% if i.status == 'waiting' %}
+                                                <td><a class="btn-link" href="/AdminActivaUsers/?uid={{ i.id }}"
+                                                       style="color:DARKBLUE">Activate</a></td>
+                                                {% else %}
+                                                <td> Activated</td>
+                                                {% endif %}
+                                            </tr>
+                                            {% endfor %}
+
+    </tbody>
+  </table>
+
+                <h1>Data Pre-processing</h1>
+                <p>
+                    Before applying algorithms to our data set, we need to perform a basic pre-processing. Data preprocessing is performed to convert data into a format suitable for our analysis and also to improve data quality since real-world data is incomplete, noisy and inconsistent. We have acquired a data set from the Bureau of Transportation for 2015. The data set consists of 25 columns and 59986 rows. There were many rows with missing and null values. The data set was cleaned up using the pandas’ dropna() function to remove rows and columns from the data set consisting of null values. After preprocessing,  the rows were reduced to 54486.
+                </p>
+
+            </div>
+            <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock%}

@@ -1,0 +1,126 @@
+{%extends 'users/userbase.html'%}
+{%load static %}
+
+{%block contents%}
+<section class="hero-banner magic-ball">
+    <div class="container">
+
+        <div class="row align-items-center text-center text-md-left">
+            <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+                <h1>Data Visulations</h1>
+                <p>
+                    <div id="container" width="200" height="200"></div>
+                                        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+                                        <script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Mean Square Error'
+        },
+        xAxis: {
+           categories: ['Decision Tree','Bayesian Ridge','Random Forest','Gradient Boosting'
+          ]
+        },
+        series: [{
+            name: 'Regressor',
+            data: [{{dt_dict.dt_MSE}},{{br_dict.br_MSE}},{{rf_dict.rf_MSE}},{{gbr_dict.gbr_MSE}}
+
+          ],
+          color: 'green'
+        },]
+    });
+
+                                        </script>
+
+                </p>
+
+            </div>
+            <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+                <div id="container1" width="200" height="200"></div>
+                                        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+                                        <script>
+    Highcharts.chart('container1', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Explained Variance Score'
+        },
+        xAxis: {
+           categories: ['Decision Tree','Bayesian Ridge','Random Forest','Gradient Boosting'
+          ]
+        },
+        series: [{
+            name: 'Regressor',
+            data: [{{dt_dict.dt_EVS}},{{br_dict.br_EVS}},{{rf_dict.rf_EVS}},{{gbr_dict.gbr_EVS}}
+
+          ],
+          color: 'RED'
+        },]
+    });
+
+                                        </script>
+            </div>
+            <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+                <div id="container2" width="200" height="200"></div>
+                                        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+                                        <script>
+    Highcharts.chart('container2', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Mean Absolute Error'
+        },
+        xAxis: {
+           categories: ['Decision Tree','Bayesian Ridge','Random Forest','Gradient Boosting'
+          ]
+        },
+        series: [{
+            name: 'Regressor',
+            data: [{{dt_dict.dt_MAE}},{{br_dict.br_MAE}},{{rf_dict.rf_MAE}},{{gbr_dict.gbr_MAE}}
+
+          ],
+          color: 'BLUE'
+        },]
+    });
+
+                                        </script>
+
+            </div>
+
+             <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+<div id="container3" width="200" height="200"></div>
+                                        <script src="https://code.highcharts.com/highcharts.src.js"></script>
+                                        <script>
+    Highcharts.chart('container3', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Median Absolute Error'
+        },
+        xAxis: {
+           categories: ['Decision Tree','Bayesian Ridge','Random Forest','Gradient Boosting'
+          ]
+        },
+        series: [{
+            name: 'Regressor',
+            data: [{{dt_dict.dt_MedianAE}},{{br_dict.br_MedianAE}},{{rf_dict.rf_MedianAE}},{{gbr_dict.gbr_MedianAE}}
+
+          ],
+          color: 'VIOLET'
+        },]
+    });
+
+                                        </script>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{%endblock%}

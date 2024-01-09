@@ -1,0 +1,80 @@
+{%extends 'users/userbase.html'%}
+{%load static %}
+
+{%block contents%}
+<section class="hero-banner magic-ball">
+    <div class="container">
+
+        <div class="row align-items-center text-center text-md-left">
+            <div class="col-md-6 col-lg-5 mb-5 mb-md-0">
+                <h1>Results</h1>
+                <p>
+<h3>User MLR Test Result Page</h3>
+<table border="2">
+    <tr>
+        <th>Model Name</th>
+        <th>Mean Square Error</th>
+        <th>Mean Absolute Error</th>
+        <th>Explained Variance Score</th>
+        <th>Median Absolute Error</th>
+        <th>R2_Score</th>
+    </tr>
+
+    <tr>
+        <td>Logistic Regression</td>
+        <td>{{lg_dict.lg_MAE}}</td>
+        <td>{{lg_dict.lg_MSE}}</td>
+        <td>{{lg_dict.lg_EVS}}</td>
+        <td>{{lg_dict.lg_MedianAE}}</td>
+        <td>{{lg_dict.lg_R2Score}}</td>
+
+    </tr>
+     <tr>
+        <td>Decision Tree Regressor</td>
+        <td>{{dt_dict.dt_MAE}}</td>
+        <td>{{dt_dict.dt_MSE}}</td>
+        <td>{{dt_dict.dt_EVS}}</td>
+        <td>{{dt_dict.dt_MedianAE}}</td>
+        <td>{{dt_dict.dt_R2Score}}</td>
+    </tr>
+
+     <tr>
+        <td>Bayesian Ridge</td>
+        <td>{{br_dict.br_MAE}}</td>
+        <td>{{br_dict.br_MSE}}</td>
+        <td>{{br_dict.br_EVS}}</td>
+        <td>{{br_dict.br_MedianAE}}</td>
+        <td>{{br_dict.br_R2Score}}</td>
+    </tr>
+
+     <tr>
+        <td>Random Forest Regressor</td>
+        <td>{{rf_dict.rf_MAE}}</td>
+        <td>{{rf_dict.rf_MSE}}</td>
+        <td>{{rf_dict.rf_EVS}}</td>
+        <td>{{rf_dict.rf_MedianAE}}</td>
+        <td>{{rf_dict.rf_R2Score}}</td>
+    </tr>
+
+     <tr>
+        <td>Gradient Boosting Regressor</td>
+        <td>{{gbr_dict.gbr_MAE}}</td>
+        <td>{{gbr_dict.gbr_MSE}}</td>
+        <td>{{gbr_dict.gbr_EVS}}</td>
+        <td>{{gbr_dict.gbr_MedianAE}}</td>
+        <td>{{gbr_dict.gbr_R2Score}}</td>
+    </tr>
+</table>
+
+                </p>
+
+            </div>
+            <div class="col-md-6 col-lg-7 col-xl-6 offset-xl-1">
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{%endblock%}
